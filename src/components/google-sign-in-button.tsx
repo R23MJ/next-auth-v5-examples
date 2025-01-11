@@ -1,11 +1,14 @@
-"use client";
-
-import { signIn } from "next-auth/react";
+import { GoogleSignIn } from "@/lib/sign-in-actions";
+import { Button } from "./ui/button";
+import GoogleIcon from "./google-icon";
 
 export default function GoogleSignInButton() {
   return (
-    <button onClick={() => signIn("google", { redirectTo: "/account" })}>
-      Sign in with Google
-    </button>
+    <form className="w-full" action={GoogleSignIn}>
+      <Button className="w-full flex items-center google-sign-in" type="submit">
+        <GoogleIcon />
+        Continue with Google
+      </Button>
+    </form>
   );
 }
