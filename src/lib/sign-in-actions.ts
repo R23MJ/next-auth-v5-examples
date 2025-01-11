@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 
 export async function CredentialsSignIn(formData: FormData) {
   await signIn("credentials", {
@@ -13,4 +13,8 @@ export async function CredentialsSignIn(formData: FormData) {
 
 export async function GoogleSignIn() {
   await signIn("google", { redirect: true, redirectTo: "/account" });
+}
+
+export async function SignOutAction() {
+  await signOut();
 }

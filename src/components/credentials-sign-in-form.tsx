@@ -20,8 +20,8 @@ export function CredentialsSignInForm() {
   const form = useForm<z.infer<typeof CredentialsSchema>>({
     resolver: zodResolver(CredentialsSchema),
     defaultValues: {
-      username: "",
-      password: "",
+      Username: "",
+      Password: "",
     },
   });
 
@@ -34,7 +34,7 @@ export function CredentialsSignInForm() {
         {Object.keys(CredentialsSchema.shape).map((key) => (
           <FormField
             control={form.control}
-            name={key as "username" | "password"}
+            name={key as "Username" | "Password"}
             key={key}
             render={({ field }) => (
               <FormItem>
