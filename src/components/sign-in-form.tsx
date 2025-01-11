@@ -1,6 +1,6 @@
 import { CredentialsSignIn } from "@/lib/sign-in-actions";
 
-export function SignInForm() {
+export function CredentialsSignInForm() {
   return (
     <form action={CredentialsSignIn}>
       <label>
