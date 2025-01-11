@@ -10,3 +10,7 @@ export async function CredentialsSignIn(formData: FormData) {
     redirectTo: "/account",
   });
 }
+
+export async function GoogleSignIn() {
+  await signIn("google", { redirect: true, redirectTo: "/account" });
+}
